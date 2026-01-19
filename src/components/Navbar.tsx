@@ -11,6 +11,7 @@ const Navbar: React.FC = () => {
         { name: 'Home', path: '/', icon: BrainCircuit },
         { name: 'Skills', path: '/skills', icon: Library },
         { name: 'Career Path', path: '/career-path', icon: Map },
+        { name: 'Skill Test', path: '/skill-test', icon: BrainCircuit }, // Added Skill Test link with BrainCircuit icon
         { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
     ];
 
