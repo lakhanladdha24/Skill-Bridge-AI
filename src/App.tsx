@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Skills from './pages/Skills'
 import CareerPath from './pages/CareerPath'
 import Dashboard from './pages/Dashboard'
+import SkillTest from './pages/SkillTest'
 import Navbar from './components/Navbar'
 
 const App: React.FC = () => {
@@ -23,6 +24,7 @@ const App: React.FC = () => {
                             <Route path="/" element={<Home />} />
                             <Route path="/skills" element={<Skills />} />
                             <Route path="/career-path" element={<CareerPath />} />
+                            <Route path="/skill-test" element={<SkillTest />} />
                             <Route path="/dashboard" element={<Dashboard />} />
                         </Routes>
                     </main>

@@ -3,8 +3,14 @@
 @tailwind utilities;
 
 :root {
+  --color-background: #0a0a0a;
+  --color-surface: #121212;
   --color-primary: #00f0ff;
   --color-secondary: #7000ff;
+  --color-accent: #ffffff;
+
+  /* RGB values for manual rgba() usage */
+  --rgb-primary: 0, 240, 255;
 }
 
 body {
@@ -16,12 +22,12 @@ body {
   .glass-card {
     @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl;
   }
-  
+
   .neon-text {
-    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5), 0 0 20px rgba(0, 240, 255, 0.3);
+    text-shadow: 0 0 10px rgba(var(--rgb-primary), 0.5), 0 0 20px rgba(var(--rgb-primary), 0.3);
   }
 
   .neon-border {
-    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2), inset 0 0 10px rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 10px rgba(var(--rgb-primary), 0.2), inset 0 0 10px rgba(var(--rgb-primary), 0.1);
   }
 }
