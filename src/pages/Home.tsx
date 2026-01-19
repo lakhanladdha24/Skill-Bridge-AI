@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Sparkles, Zap, Globe } from 'lucide-react';
 
 const Home: React.FC = () => {
+    const [stars] = useState(() =>
+        [...Array(20)].map(() => ({
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight,
+            scale: Math.random() * 0.5 + 0.5,
+            moveY: Math.random() * -100,
+            duration: Math.random() * 5 + 5,
+            delay: Math.random() * 5,
+            size: Math.random() * 4 + 2 + 'px'
+        }))
+    );
+
     return (
         <div className="relative min-h-[calc(100vh-80px)] flex flex-col items-center justify-center text-center">
 
@@ -58,28 +70,28 @@ const Home: React.FC = () => {
 
             {/* Floating Elements Animation */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {[...Array(20)].map((_, i) => (
+                {stars.map((star, i) => (
                     <motion.div
                         key={i}
                         className="absolute bg-white/5 rounded-full"
                         initial={{
-                            x: Math.random() * window.innerWidth,
-                            y: Math.random() * window.innerHeight,
-                            scale: Math.random() * 0.5 + 0.5,
+                            x: star.x,
+                            y: star.y,
+                            scale: star.scale,
                         }}
                         animate={{
-                            y: [null, Math.random() * -100],
+                            y: [null, star.moveY],
                             opacity: [0, 1, 0]
                         }}
                         transition={{
-                            duration: Math.random() * 5 + 5,
+                            duration: star.duration,
                             repeat: Infinity,
                             ease: "linear",
-                            delay: Math.random() * 5
+                            delay: star.delay
                         }}
                         style={{
-                            width: Math.random() * 4 + 2 + 'px',
-                            height: Math.random() * 4 + 2 + 'px',
+                            width: star.size,
+                            height: star.size,
                         }}
                     />
                 ))}

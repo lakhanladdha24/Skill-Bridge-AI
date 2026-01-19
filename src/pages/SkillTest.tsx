@@ -6,7 +6,6 @@ const SkillTest: React.FC = () => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [score, setScore] = useState(0);
     const [showResult, setShowResult] = useState(false);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [, setAnswers] = useState<Record<number, string>>({});
     const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
