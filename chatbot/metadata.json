@@ -1,8 +1,0 @@
-
-{
-  "name": "SkillBridgeAI",
-  "description": "An intelligent problem-solving companion for the SkillBridge platform, powered by Gemini 3.0 Flash. Designed to explain complex topics and bridge the gap between learning and doing.",
-  "requestFramePermissions": [
-    "camera"
-  ]
-}
